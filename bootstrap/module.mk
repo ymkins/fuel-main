@@ -32,6 +32,7 @@ BOOTSTRAP_RPMS:=\
 	crontabs \
 	dhclient \
 	dmidecode \
+	device-mapper-multipath \
 	iputils \
 	logrotate \
 	mcollective \
@@ -191,6 +192,9 @@ $(BUILD_DIR)/bootstrap/prepare-initram-root.done: \
 	# Disabling mail server (it have been installed as a dependency)
 	-sudo chroot $(INITRAMROOT) chkconfig exim off
 	-sudo chroot $(INITRAMROOT) chkconfig postfix off
+
+	# Enabling multipathd service
+	-sudo chroot $(INITRAMROOT) chkconfig multipathd on
 
 	# Installing kernel modules
 	find $(LOCAL_MIRROR_CENTOS_OS_BASEURL) -name '$(KERNEL_PATTERN)' | xargs rpm2cpio | \

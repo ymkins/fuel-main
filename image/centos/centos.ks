@@ -21,7 +21,7 @@ logging --level=info
 # Reboot after installation
 reboot
 # System services
-services --disabled="avahi-daemon,iscsi,iscsid,firstboot,kdump" --enabled="network,sshd,rsyslog,tuned"
+services --disabled="avahi-daemon,iscsi,iscsid,firstboot,kdump" --enabled="network,sshd,rsyslog,tuned,multipathd"
 # System timezone
 timezone --isUtc America/New_York
 # Network information
@@ -142,6 +142,7 @@ bind-utils
 cronie
 crontabs
 curl
+device-mapper-multipath
 gcc
 gdisk
 kernel

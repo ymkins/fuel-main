@@ -50,6 +50,7 @@ class ImageCreator(imgcreate.LoopImageCreator):
         'e1000',
         'sym53c8xx',
         'scsi_transport_sas',
+        'multipath',
         'mptbase',
         'mptscsih',
         'sd_mod',
